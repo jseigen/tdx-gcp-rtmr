@@ -2,6 +2,8 @@
 
 # Try to reconstruct RTMR[1].
 
+set -e
+
 # Find the latest kernel and initrd in /boot
 KERNEL=$(ls -1 /boot/vmlinuz-* 2>/dev/null | sort -V | tail -n 1)
 INITRD=$(ls -1 /boot/initrd.img-* 2>/dev/null | grep "$(basename "$KERNEL" | cut -d'-' -f2-)" | sort -V | tail -n 1)
